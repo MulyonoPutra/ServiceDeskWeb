@@ -1,0 +1,9 @@
+export enum ReportType {
+
+  COMPLAINT = "COMPLAINT",
+
+  ASPIRATION = "ASPIRATION",
+
+  INFORMATION_REQUEST = "INFORMATION_REQUEST",
+  
+}

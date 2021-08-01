@@ -1,0 +1,632 @@
+<nav
+  class="navbar navbar-expand-lg fixed-top navbar-transparent"
+  color-on-scroll="100"
+  id="navbar-top"
+>
+  <div class="container">
+    <div class="navbar-translate">
+      <a
+        class="navbar-brand"
+        placement="bottom"
+        [routerLink]="['/home']"
+        target="_blank"
+        tooltip="Designed and Coded by Creative Tim"
+      >
+        <span> Karang Tengah Service Desk </span>
+      </a>
+      <button
+        aria-controls="navigation-index"
+        aria-label="Toggle navigation"
+        class="navbar-toggler navbar-toggler"
+        [attr.aria-expanded]="!isCollapsed"
+        (click)="isCollapsed = !isCollapsed"
+        id="navigation"
+        type="button"
+      >
+        <span class="navbar-toggler-bar bar1"> </span>
+        <span class="navbar-toggler-bar bar2"> </span>
+        <span class="navbar-toggler-bar bar3"> </span>
+      </button>
+    </div>
+    <div
+      class="navbar-collapse justify-content-end"
+      [collapse]="isCollapsed"
+      id="navigation"
+    >
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a> •Karang Tengah Service Desk• </a>
+          </div>
+          <div class="col-6 collapse-close text-right">
+            <button
+              aria-controls="navigation-index"
+              aria-label="Toggle navigation"
+              class="navbar-toggler"
+              [attr.aria-expanded]="!isCollapsed"
+              (click)="isCollapsed = !isCollapsed"
+              id="navigation"
+              type="button"
+            >
+              <i class="tim-icons icon-simple-remove"> </i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-nav">
+        <li class="nav-item p-0">
+          <a
+            class="nav-link"
+            href="https://twitter.com/CreativeTim"
+            placement="bottom"
+            target="_blank"
+            tooltip="Follow us on Twitter"
+          >
+            <i class="fab fa-twitter"> </i>
+            <p class="d-lg-none d-xl-none">Twitter</p>
+          </a>
+        </li>
+        <li class="nav-item p-0">
+          <a
+            class="nav-link"
+            href="https://www.facebook.com/CreativeTim"
+            placement="bottom"
+            target="_blank"
+            tooltip="Like us on Facebook"
+          >
+            <i class="fab fa-facebook-square"> </i>
+            <p class="d-lg-none d-xl-none">Facebook</p>
+          </a>
+        </li>
+        <li class="nav-item p-0">
+          <a
+            class="nav-link"
+            href="https://www.instagram.com/CreativeTimOfficial"
+            placement="bottom"
+            target="_blank"
+            tooltip="Follow us on Instagram"
+          >
+            <i class="fab fa-instagram"> </i>
+            <p class="d-lg-none d-xl-none">Instagram</p>
+          </a>
+        </li>
+        <li class="dropdown nav-item" dropdown>
+          <a
+            class="dropdown-toggle nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            dropdownToggle
+            href="javascript:void(0)"
+          >
+            <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Getting started
+          </a>
+          <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
+            <a
+              class="dropdown-item"
+              href="https://demos.creative-tim.com/blk-design-system-angular/#/documentation/overview"
+            >
+              <i class="tim-icons icon-paper"> </i> Documentation
+            </a>
+            <a class="dropdown-item" [routerLink]="['/register']">
+              <i class="tim-icons icon-bullet-list-67"> </i> Register Page
+            </a>
+            <a class="dropdown-item" [routerLink]="['/landing']">
+              <i class="tim-icons icon-image-02"> </i> Landing Page
+            </a>
+            <a class="dropdown-item" [routerLink]="['/profile']">
+              <i class="tim-icons icon-single-02"> </i> Profile Page
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="wrapper">
+  <div class="page-header header-filter">
+    <div class="squares square1"></div>
+    <div class="squares square2"></div>
+    <div class="squares square3"></div>
+    <div class="squares square4"></div>
+    <div class="squares square5"></div>
+    <div class="squares square6"></div>
+    <div class="squares square7"></div>
+    <div class="container">
+      <div class="content-center brand">
+        <h3 class="h3-seo">• Karang Tengah Service Desk •</h3>
+        <h3>
+          Complaint reporting Apps that allow users to report and file service
+          related complaints.
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="section section-basic" id="basic-elements">
+      <img class="path" src="assets/img/path1.png" />
+      <div class="section section-tabs">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 ml-auto col-xl-6 mr-auto">
+              <form
+                name="editForm"
+                role="form"
+                novalidate
+                (ngSubmit)="save()"
+                [formGroup]="editForm"
+              >
+              <div class="card">
+                <div class="card-header">
+                    <div class="alert alert-primary" role="alert">
+                      Sampaikan Laporan Anda
+                    </div>
+                    <label for="exampleInputEmail1">Report Type</label>
+
+                    <!-- Report Type Radio Button -->
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-check form-check-radio">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              formControlName="type"
+                              id="field_type"
+                              data-cy="type"
+                              value="COMPLAINT"
+                            />
+                            Complaint
+                            <span class="form-check-sign"></span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-check form-check-radio">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              formControlName="type"
+                              id="field_type"
+                              data-cy="type"
+                              value="ASPIRATION"
+                            />
+                            Aspiration
+                            <span class="form-check-sign"></span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-check form-check-radio">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              formControlName="type"
+                              id="field_type"
+                              data-cy="type"
+                              value="INFORMATION_REQUEST"
+                            />
+                            Request Information
+                            <span class="form-check-sign"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Report Type Radio Button -->
+                    &nbsp;
+                    <!-- Alert With Close Button -->
+                    <div
+                      class="alert alert-warning alert-dismissible fade show"
+                      role="alert"
+                    >
+                      Perhatikan Cara Menyampaikan Pengaduan Yang Baik dan Benar
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="alert"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <!-- Alert With Close Button -->
+                            <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+                    <!-- Title -->
+                    <div class="form-group">
+                      <label class="form-control-label" for="field_title"
+                        >Title</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="title"
+                        id="field_title"
+                        data-cy="title"
+                        formControlName="title"
+                      />
+                      <div
+                        *ngIf="
+                          editForm.get('title')!.invalid &&
+                          (editForm.get('title')!.dirty ||
+                            editForm.get('title')!.touched)
+                        "
+                      >
+                        <small
+                          class="form-text text-danger"
+                          *ngIf="editForm.get('title')?.errors?.required"
+                        >
+                          This field is required.
+                        </small>
+                      </div>
+                    </div>
+                    <!-- Title -->
+
+                    <!-- Location -->
+                    <div class="form-group">
+                      <label class="form-control-label" for="field_location"
+                        >Location</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="location"
+                        id="field_location"
+                        data-cy="location"
+                        formControlName="location"
+                      />
+                      <div
+                        *ngIf="
+                          editForm.get('location')!.invalid &&
+                          (editForm.get('location')!.dirty ||
+                            editForm.get('location')!.touched)
+                        "
+                      >
+                        <small
+                          class="form-text text-danger"
+                          *ngIf="editForm.get('location')?.errors?.required"
+                        >
+                          This field is required.
+                        </small>
+                      </div>
+                    </div>
+                    <!-- Location -->
+
+                    <!-- Category -->
+                    <div class="form-group">
+                      <label class="form-control-label" for="field_category"
+                        >Category</label
+                      >
+                      <select
+                        class="form-control"
+                        id="field_category"
+                        data-cy="category"
+                        name="category"
+                        formControlName="category"
+                      >
+                        <option [ngValue]="null"></option>
+                        <option
+                          [ngValue]="
+                        categoryOption.name ===
+                        editForm.get('category')!.value?.name
+                          ? editForm.get('category')!.value
+                          : categoryOption
+                      "
+                          *ngFor="
+                            let categoryOption of categoriesSharedCollection;
+                            trackBy: trackCategoryById
+                          "
+                        >
+                          {{ categoryOption.name }}
+                        </option>
+                      </select>
+                    </div>
+                    <!-- Category -->
+
+                    <!-- Date -->
+                    <div class="form-group">
+                      <label class="form-control-label" for="field_date"
+                        >Date</label
+                      >
+                      <div class="d-flex">
+                        <input
+                          id="field_date"
+                          data-cy="date"
+                          type="datetime-local"
+                          class="form-control"
+                          name="date"
+                          formControlName="date"
+                          placeholder="YYYY-MM-DD HH:mm"
+                        />
+                      </div>
+                      <div
+                        *ngIf="
+                          editForm.get('date')!.invalid &&
+                          (editForm.get('date')!.dirty ||
+                            editForm.get('date')!.touched)
+                        "
+                      >
+                        <small
+                          class="form-text text-danger"
+                          *ngIf="editForm.get('date')?.errors?.required"
+                        >
+                          This field is required.
+                        </small>
+                        <small
+                          class="form-text text-danger"
+                          [hidden]="
+                            !editForm.get('date')?.errors?.ZonedDateTimelocal
+                          "
+                        >
+                          This field should be a date and time.
+                        </small>
+                      </div>
+                    </div>
+                    <!-- Date -->
+
+                    <!-- Instance -->
+                    <div class="form-group">
+                      <label class="form-control-label" for="field_institution"
+                        >Institution</label
+                      >
+                      <select
+                        class="form-control"
+                        id="field_institution"
+                        data-cy="institution"
+                        name="institution"
+                        formControlName="institution"
+                      >
+                        <option [ngValue]="null"></option>
+                        <option
+                          [ngValue]="
+                            institutionOption.id ===
+                            editForm.get('institution')!.value?.id
+                              ? editForm.get('institution')!.value
+                              : institutionOption
+                          "
+                          *ngFor="
+                            let institutionOption of institutionsSharedCollection;
+                            trackBy: trackInstitutionById
+                          "
+                        >
+                          {{ institutionOption.instanceName }}
+                        </option>
+                      </select>
+                    </div>
+                    <!-- Instance -->
+
+                    <!-- Content -->
+                    <div class="form-group">
+                      <label class="form-control-label" for="field_content"
+                        >Content</label
+                      >
+                      <textarea
+                        class="form-control"
+                        name="content"
+                        id="field_content"
+                        data-cy="content"
+                        formControlName="content"
+                      ></textarea>
+                      <div
+                        *ngIf="
+                          editForm.get('content')!.invalid &&
+                          (editForm.get('content')!.dirty ||
+                            editForm.get('content')!.touched)
+                        "
+                      >
+                        <small
+                          class="form-text text-danger"
+                          *ngIf="editForm.get('content')?.errors?.required"
+                        >
+                          This field is required.
+                        </small>
+                      </div>
+                    </div>
+                    <!-- Content -->
+
+                    <!-- Upload Images -->
+                    <div class="form-group">
+                      <label class="form-control-label" for="field_images"
+                        >Images</label
+                      >
+                      <div>
+                        <img
+                          [src]="
+                            'data:' +
+                            editForm.get('imagesContentType')!.value +
+                            ';base64,' +
+                            editForm.get('images')!.value
+                          "
+                          style="max-height: 100px"
+                          *ngIf="editForm.get('images')!.value"
+                          alt="report image"
+                        />
+                        <div
+                          *ngIf="editForm.get('images')!.value"
+                          class="form-text text-danger clearfix"
+                        >
+                          <span class="pull-left"
+                            >{{ editForm.get("imagesContentType")!.value }},
+                            {{ byteSize(editForm.get("images")!.value) }}</span
+                          >
+                          <button
+                            type="button"
+                            (click)="
+                              clearInputImage(
+                                'images',
+                                'imagesContentType',
+                                'file_images'
+                              )
+                            "
+                            class="btn btn-secondary btn-xs pull-right"
+                          >
+                            <fa-icon icon="times"></fa-icon>
+                          </button>
+                        </div>
+                        <input
+                          type="file"
+                          id="file_images"
+                          data-cy="images"
+                          (change)="setFileData($event, 'images', true)"
+                          accept="image/*"
+                        />
+                      </div>
+                      <input
+                        type="hidden"
+                        class="form-control"
+                        name="images"
+                        id="field_images"
+                        data-cy="images"
+                        formControlName="images"
+                      />
+                      <input
+                        type="hidden"
+                        class="form-control"
+                        name="imagesContentType"
+                        id="field_imagesContentType"
+                        formControlName="imagesContentType"
+                      />
+                      <div
+                        *ngIf="
+                          editForm.get('images')!.invalid &&
+                          (editForm.get('images')!.dirty ||
+                            editForm.get('images')!.touched)
+                        "
+                      >
+                        <small
+                          class="form-text text-danger"
+                          *ngIf="editForm.get('images')?.errors?.required"
+                        >
+                          This field is required.
+                        </small>
+                      </div>
+                    </div>
+                    <!-- Upload Images -->
+
+                    <!-- Button -->
+                    <button class="btn btn-link btn-warning mr-1">
+                      Warning
+                    </button>
+                    <button
+                      class="btn btn-success mr-1"
+                      type="submit"
+                      id="save-entity"
+                      data-cy="entityCreateSaveButton"
+                      [disabled]="editForm.invalid || isSaving"
+                    >
+                      Success
+                    </button>
+                    <!-- Button -->
+                  </div>
+                  &nbsp;
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section-navbars">
+      <img class="path" src="assets/img/path3.png" />
+    </div>
+
+    <div class="section section-pagination">
+      <img class="path" src="assets/img/path4.png" />
+
+      <img class="path path1" src="assets/img/path5.png" />
+    </div>
+
+    <div class="section section-javascript" id="javascriptComponents">
+      <img class="path" src="assets/img/path5.png" />
+
+      <img class="path path1" src="assets/img/path5.png" />
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h1 class="title">BLK•</h1>
+        </div>
+        <div class="col-md-3">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/home']"> Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/landing']"> Landing </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/register']"> Register </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/profile']"> Profile </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <ul class="nav">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://creative-tim.com/contact-us?ref=blkdsa-footer"
+              >
+                Contact Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://creative-tim.com/about-us?ref=blkdsa-footer"
+              >
+                About Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://creative-tim.com/blog?ref=blkdsa-footer"
+              >
+                Blog
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://opensource.org/licenses/MIT">
+                License
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="title">Follow us:</h3>
+          <div class="btn-wrapper profile">
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+              href="https://twitter.com/creativetim"
+              target="_blank"
+            >
+              <i class="fab fa-twitter"> </i>
+            </a>
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+              href="https://www.facebook.com/creativetim"
+              target="_blank"
+            >
+              <i class="fab fa-facebook-square"> </i>
+            </a>
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple"
+              href="https://dribbble.com/creativetim"
+              target="_blank"
+            >
+              <i class="fab fa-dribbble"> </i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
